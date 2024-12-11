@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAspose", "DemoAspose\DemoAspose.csproj", "{9C131E28-6E9F-4D37-A63B-EA67A982E300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAspose.Tests", "DemoAspose.Tests\DemoAspose.Tests.csproj", "{F8020050-8ECF-497A-8858-B3D1A8C5C1DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C131E28-6E9F-4D37-A63B-EA67A982E300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C131E28-6E9F-4D37-A63B-EA67A982E300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C131E28-6E9F-4D37-A63B-EA67A982E300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C131E28-6E9F-4D37-A63B-EA67A982E300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8020050-8ECF-497A-8858-B3D1A8C5C1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8020050-8ECF-497A-8858-B3D1A8C5C1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8020050-8ECF-497A-8858-B3D1A8C5C1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8020050-8ECF-497A-8858-B3D1A8C5C1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E737FE0E-7CBB-49B5-B836-289E2D69C9F3}
+	EndGlobalSection
+EndGlobal
