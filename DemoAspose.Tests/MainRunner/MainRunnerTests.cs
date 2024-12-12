@@ -3,20 +3,20 @@ using DemoAspose.InputOutput.OutputProvider;
 using DemoAspose.Processors.FileProcessor;
 using Moq;
 
-namespace DemoAspose.Tests;
+namespace DemoAspose.Tests.MainRunner;
 public class MainRunnerTests
 {
     private readonly Mock<IFileProcessor> _mockFileProcessor;
     private readonly Mock<IInputProvider> _mockInputProvider;
     private readonly Mock<IOutputProvider> _mockOutputProvider;
-    private readonly MainRunner.MainRunner _mainRunner;
+    private readonly DemoAspose.MainRunner.MainRunner _mainRunner;
 
     public MainRunnerTests()
     {
         _mockFileProcessor = new Mock<IFileProcessor>();
         _mockInputProvider = new Mock<IInputProvider>();
         _mockOutputProvider = new Mock<IOutputProvider>();
-        _mainRunner = new MainRunner.MainRunner(_mockFileProcessor.Object, _mockInputProvider.Object, _mockOutputProvider.Object);
+        _mainRunner = new DemoAspose.MainRunner.MainRunner(_mockFileProcessor.Object, _mockInputProvider.Object, _mockOutputProvider.Object);
     }
 
     [Fact]
