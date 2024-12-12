@@ -16,13 +16,17 @@ Output
 For each test case, output one line containing “Case #x: ” followed by the message 
 translated into the sequence of key presses.
 Sample Input 
+
+
 4
 hi
 yes
 foo  bar
 hello world
 
-Sample Output 
+Sample Output
+
+ 
 Case #1: 44 444
 Case #2: 999337777
 Case #3: 333666 6660 022 2777
