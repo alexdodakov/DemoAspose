@@ -13,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DemoAspose.InputOutput\DemoAspose.InputOutput.csproj" />
+    <ProjectReference Include="..\DemoAspose.Processors\DemoAspose.Processors.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Sample.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
