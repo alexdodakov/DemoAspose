@@ -1,7 +1,7 @@
 ﻿using DemoAspose.InputOutput.FileReader;
 using DemoAspose.InputOutput.FileWriter;
+using DemoAspose.InputOutput.StreamProvider;
 using DemoAspose.Processors.LineProcessor;
-using DemoAspose.StreamCreator;
 using Moq;
 
 namespace DemoAspose.Processors.Tests.FileProcessor;
@@ -11,7 +11,7 @@ public class FileProcessorTests
     private readonly Mock<IFileReader> mockReader;
     private readonly Mock<IFileWriter> mockWriter;
     private readonly Mock<ILineProcessor> mockLineProcessor;
-    private readonly Mock<IStreamCreator> mockStreamCreator;
+    private readonly Mock<IStreamProvider> mockStreamProvider;
     private readonly Processors.FileProcessor.FileProcessor streamProcessor;
 
     public FileProcessorTests()
@@ -19,8 +19,8 @@ public class FileProcessorTests
         mockReader = new Mock<IFileReader>();
         mockWriter = new Mock<IFileWriter>();
         mockLineProcessor = new Mock<ILineProcessor>();
-        mockStreamCreator = new Mock<IStreamCreator>();
-        streamProcessor = new Processors.FileProcessor.FileProcessor(mockReader.Object, mockWriter.Object, mockLineProcessor.Object, mockStreamCreator.Object);
+        mockStreamProvider = new Mock<IStreamProvider>();
+        streamProcessor = new Processors.FileProcessor.FileProcessor(mockReader.Object, mockWriter.Object, mockLineProcessor.Object, mockStreamProvider.Object);
     }
 
     [Fact]
@@ -34,8 +34,8 @@ public class FileProcessorTests
 
         mockReader.Setup(r => r.ReadLinesAsync(It.IsAny<Stream>())).Returns(GetAsyncStream(lines));
         mockLineProcessor.Setup(lp => lp.ProcessLine(It.IsAny<int>(), It.IsAny<string>())).Returns((int lineNumber, string line) => $"processed {line}");
-        mockStreamCreator.Setup(sc => sc.CreateInputStream(inputFileName)).Returns(new MemoryStream());
-        mockStreamCreator.Setup(sc => sc.CreateOutputStream(outputFileName)).Returns(new MemoryStream());
+        mockStreamProvider.Setup(sc => sc.CreateInputStream(inputFileName)).Returns(new MemoryStream());
+        mockStreamProvider.Setup(sc => sc.CreateOutputStream(outputFileName)).Returns(new MemoryStream());
 
         // Act
         await streamProcessor.Process(inputFileName, outputFileName);

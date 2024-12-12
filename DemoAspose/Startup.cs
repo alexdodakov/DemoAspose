@@ -2,10 +2,10 @@
 using DemoAspose.InputOutput.FileWriter;
 using DemoAspose.InputOutput.InputProvider;
 using DemoAspose.InputOutput.OutputProvider;
+using DemoAspose.InputOutput.StreamProvider;
 using DemoAspose.MainRunner;
 using DemoAspose.Processors.FileProcessor;
 using DemoAspose.Processors.LineProcessor;
-using DemoAspose.StreamCreator;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class Startup
@@ -17,7 +17,7 @@ public static class Startup
             .AddTransient<IFileWriter, FileWriter>()
             .AddTransient<ILineProcessor, LineProcessor>()
             .AddTransient<IFileProcessor, FileProcessor>()
-            .AddTransient<IStreamCreator, StreamCreator>()
+            .AddTransient<IStreamProvider, StreamProvider>()
             .AddTransient<IInputProvider, InputProvider>()
             .AddTransient<IOutputProvider, OutputProvider>()
             .AddTransient<IMainRunner, MainRunner>()

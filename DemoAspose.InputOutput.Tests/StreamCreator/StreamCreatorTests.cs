@@ -1,15 +1,15 @@
-﻿using DemoAspose.StreamCreator;
+﻿using DemoAspose.InputOutput.StreamProvider;
 
-namespace DemoAspose.InputOutput.Tests.StreamCreator;
-public class StreamCreatorTests : IDisposable
+namespace DemoAspose.InputOutput.Tests.StreamProvider;
+public class StreamProviderTests : IDisposable
 {
-    private readonly IStreamCreator streamCreator;
+    private readonly IStreamProvider StreamProvider;
     private readonly string tempInputFilePath;
     private readonly string tempOutputFilePath;
 
-    public StreamCreatorTests()
+    public StreamProviderTests()
     {
-        streamCreator = new DemoAspose.StreamCreator.StreamCreator();
+        StreamProvider = new InputOutput.StreamProvider.StreamProvider();
         tempInputFilePath = Path.GetTempFileName();
         tempOutputFilePath = Path.GetTempFileName();
 
@@ -23,7 +23,7 @@ public class StreamCreatorTests : IDisposable
         // Arrange
 
         // Act
-        var result = streamCreator.CreateInputStream(tempInputFilePath);
+        var result = StreamProvider.CreateInputStream(tempInputFilePath);
 
         // Assert
         Assert.NotNull(result);
@@ -42,7 +42,7 @@ public class StreamCreatorTests : IDisposable
         // Arrange
 
         // Act
-        var result = streamCreator.CreateOutputStream(tempOutputFilePath);
+        var result = StreamProvider.CreateOutputStream(tempOutputFilePath);
 
         // Assert
         Assert.NotNull(result);
@@ -62,7 +62,7 @@ public class StreamCreatorTests : IDisposable
         var nonExistentFilePath = Path.Combine(Path.GetTempPath(), "nonexistentfile.txt");
 
         // Act & Assert
-        var exception = Assert.Throws<FileNotFoundException>(() => streamCreator.CreateInputStream(nonExistentFilePath));
+        var exception = Assert.Throws<FileNotFoundException>(() => StreamProvider.CreateInputStream(nonExistentFilePath));
         Assert.Contains(nonExistentFilePath, exception.Message);
     }
 

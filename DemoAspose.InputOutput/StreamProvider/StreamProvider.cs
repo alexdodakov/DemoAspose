@@ -1,5 +1,5 @@
-﻿namespace DemoAspose.StreamCreator;
-public class StreamCreator : IStreamCreator
+﻿namespace DemoAspose.InputOutput.StreamProvider;
+public class StreamProvider : IStreamProvider
 {
     public Stream CreateInputStream(string fileName)
     {
